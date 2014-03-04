@@ -13,7 +13,7 @@
 		<!-- <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 		
 		<!-- Bootstrap Datepicker (Separate) -->
-		<link href="bootstrap/css/datepicker.css" rel="stylesheet">
+		<link href="bootstrap/css/datepicker3.css" rel="stylesheet">
 		
     
 	</head>
@@ -176,15 +176,20 @@
 					<h1 align="center"> When are you going? </h1>
 					<br>
 					<form class="form-when" role="form" action="javascript:toGroups();">
-						<div class="input-append date datepicker no-padding" data-date-format="dd-mm-yyyy">
-    						From:<input class="input-medium" size="16" type="text"><span class="add-on"><i class="icon-th"></i></span>
-						</div>	
+						<h4 align="left">From:</h4>
+						<div class="input-group date" id="from-datepicker" align="center">
+				    		<input type="text" class="form-control date-text"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+				    	</div>
 						
-						<br><br>
+						<br>
+						<h4 align="left">To:</h4>
+						<div class="input-group date" id="to-datepicker" align="center">
+				    		<input type="text" class="form-control date-text"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+				    	</div>
+				    	
+				    	<br><br>
 						
-						<div class="input-append date datepicker no-padding" data-date-format="dd-mm-yyyy">
-    						To:<input class="input-medium" size="16" type="text"><span class="add-on"><i class="icon-th"></i></span>
-						</div>	
+						<button type="button" class="btn btn-primary sticky-button" id="anytime-button">Any time</button>
          				
 						<br><br>
 						<div>
@@ -228,7 +233,7 @@
 	
 	function toGroups()
 	{
-		document.location.href = ChattingRoom.html;
+		document.location.href = "Main Page.html";
 	};
 	
 	function showSomewhereElse()
@@ -302,10 +307,21 @@
 		*/
 	});
 	
+	$('.sticky-button').on('click', function(e){
+		if($(e.target).hasClass("active"))
+		{
+			$(e.target).removeClass("active");
+		}
+		else
+		{
+			$(e.target).addClass("active");
+		}
+	});
+	
 	$(document).ready(function()
 	{
-		//$('#dp3').datepicker();
-		$('.datepicker').datepicker({});
+		$('#from-datepicker').datepicker({});
+		$('#to-datepicker').datepicker({});
 	});
 	
 	</script>
@@ -375,11 +391,22 @@
 	
 	//WHEN elements
 	
+	.date-text
+	{
+		width: 75% !important;
+	}
+	
+	#anytime-button
+	{
+		width: 75%;
+	}
+	
+	.form-when
+	{
+		text-align: center;
+	}
+	
 	
 	</style>
-	
   </body>
-  
-  
-  
 </html>
