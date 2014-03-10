@@ -210,8 +210,8 @@ margin-right:2px;
 						<label class="checkbox">
 							<input type="checkbox" value="remember-me"> Remember me
 						</label>
-						<button class="btn btn-lg btn-primary btn-block" type="submit" id="btn-login-signup">Sign in</button>
-						<button class="btn btn-lg btn-secondary btn-block" type="button" id="btn-login-register" onCLick="registerAlert()">Register</button>
+						<button class="btn btn-lg btn-primary btn-block" type="submit" id="btn-login-signup" onClick="sessionStorage.setItem(&quot;login&quot, 1);">Sign in</button>
+						<button class="btn btn-lg btn-secondary btn-block" type="button" id="btn-login-register" onClick="registerAlert()">Register</button>
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -626,8 +626,15 @@ function joinD()
 	
 	//On page load
 	$(window).load(function() {
-		//Open Login modal
-		toLogin();
+		
+		if(sessionStorage.length == 0)
+			sessionStorage.setItem("login", 0);
+		
+		if(sessionStorage.getItem("login") == 0)
+		{
+			//Open Login modal
+			toLogin();
+		}
 	});
 	
 	$(function() {
