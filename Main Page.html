@@ -44,7 +44,7 @@
     border-style: solid;
     border-color: #6b3377;
     background-opacity:0.2;
-    height: 130px;
+    height: 140px;
     width: 100%;
      
 }
@@ -385,12 +385,12 @@ margin-right:2px;
                 <dl class="dl-horizontal">
                 <dt><div class="col-lg-offset-1 col-lg-12">
                     <input type="email" class="form-control margin" id="searchkey" placeholder="Enter Keyword"></div></dt>
-                    <dd><button class="margin btn btn-primary btn-sm col-md-offset-4" style = "margin-left:0%;">Search</button></dd>
+                    <dd><button class="margin btn btn-success btn-sm col-md-offset-4" style = "margin-left:0%;">Search</button></dd>
                 </dl>
                 <dl class = "dl-horizontal" style="margin-left:10%;">
                 <span class="label label-default">Carpooling</span>
                 <span class="label label-primary">Shopping</span>
-                <span class="label label-success">Florida</span>
+                <span class="label label-warning">Florida</span>
             </div>
             <br>
             <br>
@@ -409,65 +409,76 @@ margin-right:2px;
             <h2>Hot Groups
             </dl>
         <div class="panel-group" style="margin-left:0%;">
+            <a href="ChattingRooma.html">
             <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <!--<img src = "group purple.png" width = "60" height="17">-->
-                #1 : Flying to Florida; 2014.3.24
-            <div class= "pic" id="florida">
-            <img src = "florida.jpg" width = "80%" height="80%">
-            </div>
+            <img src = "group purple.png" width = "60" height="17">
+                #1 : Flying to Florida;
+                <div class = "date" style="float:right;">2014.3.25
+                </div>    
       </h4>
     </div>
       <div class="panel-body">
-        Online Number:36
-       <button class="margin btn btn-sm col-md-offset-4 btn-success" style = "float:right; width:200px; font-size: 16px;" onclick="joinA()">JOIN</button>
+         Description: I was born in Florida, and will come back in this spring break. So if someone wants to join in, just contact with me.<br><br>
+       <span class="label label-default">Sunshine</span>
+                <span class="label label-primary">Long</span>
+                <span class="label label-warning">Travel</span>
     </div>
+</div>
+</a>
+	<a href="ChattingRoomb.html">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <img src = "group purple.png" width = "60" height="17">
+               #2 : Flying to California; 
+               <div class = "date" style="float:right;">2014.4.5
+                </div>  
+      </h4>
+    </div>
+      <div class="panel-body">
+        Description: This group is created for students to travel to California. If you are interested, just join in our group.<br><br>
+       <span class="label label-default">Warm</span>
+                <span class="label label-primary">Beach</span>
+                <span class="label label-warning">Travel</span>
+    </div>
+</a>
+<a href="ChattingRoomc.html">
 </div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <!-- <img src = "group purple.png" width = "60" height="17">-->
-               #2 : Flying to California; 2014.3.27
-            <div class= "pic" id="florida">
-            <img src = "california.jpg" width = "80%" height="80%">
-            </div>
+            <img src = "group purple.png" width = "60" height="17">
+                #3 : Carpooling 
+                <div class = "date" style="float:right;">2014.4.2
+                </div>  
       </h4>
     </div>
       <div class="panel-body">
-        Online Number:27
-      <button class="margin btn btn-sm col-md-offset-4 btn-success" style = "float:right; width:200px; font-size: 16px;" onclick="joinB()">JOIN</button>
+       Description: I'd like share a ride to nearby cities. Does anyone interest in this?<br><br>
+       <span class="label label-default">Carpooling</span>
+                <span class="label label-primary">Happiness</span>
+                <span class="label label-warning">Save time and money</span>
     </div>
 </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <!--<img src = "group purple.png" width = "60" height="17">-->
-                #3 : Carpooling 2014.4.1
-            <div class= "pic" id="florida">
-            <img src = "carpool.jpg" width = "80%" height="80%">
-            </div>
-      </h4>
-    </div>
-      <div class="panel-body">
-        Online Number:45
-      <button class="margin btn btn-sm col-md-offset-4 btn-success" style = "float:right; width:200px; font-size: 16px;" onclick="joinC()">JOIN</button>
-    </div>
-</div>
+</a>
+     <a href="ChattingRoomd.html">
      <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <!--<img src = "group purple.png" width = "60" height="17">-->
-               #4 : Shopping in Chicago  2014.3.04
-            <div class= "pic" id="florida">
-            <img src = "chicago.jpg" width = "80%" height="80%">
-            </div>
+            <img src = "group purple.png" width = "60" height="17">
+               #4 : Shopping in Chicago  
+            <div class = "date" style="float:right;">2014.4.2
+                </div>  
       </h4>
     </div>
       <div class="panel-body">
-        Online Number:7
-       <button class="margin btn btn-sm col-md-offset-4 btn-success" style = "float:right; width:200px; font-size: 16px;" onclick="joinD()">JOIN</button>
-    </div>
+         Description: This group is created for shopping in chicago.My car can hold three persons, so pls contact with me ASAP.<br><br>
+       <span class="label label-default">Shopping</span>
+                <span class="label label-primary">Chicago</span>
+                <span class="label label-warning">SharingGas</span>
+    </div></a>
     
     
     
@@ -628,18 +639,13 @@ function joinD()
 	$(window).load(function() {
 		
 		if(sessionStorage.length == 0)
-		{
 			sessionStorage.setItem("login", 0);
-			sessionStorage.setItem("visited", 0);
-		}
 		
-		if(sessionStorage.getItem("visited") != 1)//sessionStorage.getItem("login") == 0)
+		if(sessionStorage.getItem("login") == 0)
 		{
 			//Open Login modal
 			toLogin();
 		}
-		
-		sessionStorage.setItem("visited", 1);
 	});
 	
 	$(function() {
