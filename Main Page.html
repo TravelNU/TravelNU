@@ -412,7 +412,7 @@ margin-right:2px;
             <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
+            <!--<img src = "group purple.png" width = "60" height="17">-->
                 #1 : Flying to Florida; 2014.3.24
             <div class= "pic" id="florida">
             <img src = "florida.jpg" width = "80%" height="80%">
@@ -427,7 +427,7 @@ margin-right:2px;
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
+            <!-- <img src = "group purple.png" width = "60" height="17">-->
                #2 : Flying to California; 2014.3.27
             <div class= "pic" id="florida">
             <img src = "california.jpg" width = "80%" height="80%">
@@ -442,7 +442,7 @@ margin-right:2px;
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
+            <!--<img src = "group purple.png" width = "60" height="17">-->
                 #3 : Carpooling 2014.4.1
             <div class= "pic" id="florida">
             <img src = "carpool.jpg" width = "80%" height="80%">
@@ -457,7 +457,7 @@ margin-right:2px;
      <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
+            <!--<img src = "group purple.png" width = "60" height="17">-->
                #4 : Shopping in Chicago  2014.3.04
             <div class= "pic" id="florida">
             <img src = "chicago.jpg" width = "80%" height="80%">
@@ -628,13 +628,18 @@ function joinD()
 	$(window).load(function() {
 		
 		if(sessionStorage.length == 0)
+		{
 			sessionStorage.setItem("login", 0);
+			sessionStorage.setItem("visited", 0);
+		}
 		
-		if(sessionStorage.getItem("login") == 0)
+		if(sessionStorage.getItem("visited") != 1)//sessionStorage.getItem("login") == 0)
 		{
 			//Open Login modal
 			toLogin();
 		}
+		
+		sessionStorage.setItem("visited", 1);
 	});
 	
 	$(function() {
