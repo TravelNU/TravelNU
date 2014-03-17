@@ -42,11 +42,13 @@
 .panel-default{
     border:3px ;
     border-style: solid;
-    border-color: #6b3377;
+    border-color: #c48cd1;
     background-opacity:0.2;
     height: 140px;
     width: 100%;
-     
+}
+.panel-default:hover{
+	background-color:#e1f0df;
 }
 input.margin
 {
@@ -168,7 +170,7 @@ margin-right:2px;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="HomePage.html"><img src="logo.jpg" width=200 height=45 /></a>
+				<a class="navbar-brand" href="Main Page.html"><img src="logo.jpg" width=200 height=45 /></a>
 			</div>
 			
 			<form class="navbar-form navbar-left" role="form">
@@ -183,7 +185,7 @@ margin-right:2px;
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Preferences</a></li>
-							<li><a href="MainPage.html">Log Out</a></li>
+							<li><a href="Main Page.html">Log Out</a></li>
 					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -326,11 +328,11 @@ margin-right:2px;
 					<br>
 					<form class="form-when" role="form" action="javascript:toGroups();">
 						<h4 align="left">From:</h4>
-				    	<input type="text" class="form-control">
+				    	<input type="text" class="form-control" placeholder="MM/DD/YYYY">
 						
 						<br>
 						<h4 align="left">To:</h4>
-				    	<input type="text" class="form-control">
+				    	<input type="text" class="form-control" placeholder="MM/DD/YYYY">
 				    	
 				    	<br><br>
 						
@@ -381,6 +383,38 @@ margin-right:2px;
         <div class="col-lg-3" style="background-color:#F7F7F9;">
             <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="CreateGroup()">CREATE GROUP</button>
             <br>
+            
+            <div class="form-group" style="border-style:solid; border-width:1px">
+	            <div class="form-group">
+	                <div class=" col-lg-12">
+	                    <input type="email" class="form-control margin" id="searchkey" placeholder="Search"><p></p>
+	                </div>
+	
+	                <div class="col-lg-offset-1">
+	                <span class="label label-warning">CAR POOL</span>
+	                &nbsp&nbsp&nbsp   
+	                <span class="label label-primary">SHARE CAR</span>
+	                &nbsp&nbsp&nbsp  
+	                <span class="label label-default">PARTNER</span>
+	                <p></p>
+	                </div>
+	
+	                    <div>
+	                    <div class="col-lg-9">
+	                        <select class="form-control" id="search by">
+	                                <option value="time">Order by...</option>
+	                                <option value="time">Time</option>
+	                                <option value="name">Name</option>
+	                                <option value="group size">Group Size</option>
+	                                <option value="popularity">Popularity</option>
+	                        </select>
+	                    </div>
+	                    <button class="btn btn-success" style="width: 95px;">Search</button>
+	                    </div>   
+	            </div>
+	        </div>
+            
+            <!-- OLD:
             <div class="form-group" style="border-style:solid; border-width:1px">
                 <dl class="dl-horizontal">
                 <dt><div class="col-lg-offset-1 col-lg-12">
@@ -402,86 +436,113 @@ margin-right:2px;
                 <input type = "checkbox" value = "group member"> number of group members<br><br>
                 <input type = "checkbox" value = "popularity"> popularity<br><br>
             </div>
+        	</div>
         </div>
-
+            -->
+        </div>
+        
         <div class="col-lg-9">
         <dl class = "dl-horizontal" style="margin-left:40%;">
-            <h2>Hot Groups
+            <h2>Available Groups
             </dl>
-        <div class="panel-group" style="margin-left:0%;">
-            <a href="ChattingRooma.html">
-            <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
-                #1 : Flying to Florida;
-                <div class = "date" style="float:right;">2014.3.25
-                </div>    
-      </h4>
-    </div>
-      <div class="panel-body">
-         Description: I was born in Florida, and will come back in this spring break. So if someone wants to join in, just contact with me.<br><br>
-       <span class="label label-default">Sunshine</span>
-                <span class="label label-primary">Long</span>
-                <span class="label label-warning">Travel</span>
-    </div>
-</div>
-</a>
-	<a href="ChattingRoomb.html">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
-               #2 : Flying to California; 
-               <div class = "date" style="float:right;">2014.4.5
-                </div>  
-      </h4>
-    </div>
-      <div class="panel-body">
-        Description: This group is created for students to travel to California. If you are interested, just join in our group.<br><br>
-       <span class="label label-default">Warm</span>
+        <div class="panel-group" style="margin-left:0%; overflow-y:scroll;">
+        
+        <a href="ChattingRooma.html" style="text-decoration:none;">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+            		<h4 class="panel-title">
+            		<img src = "group purple.png" width = "60" height="17">
+                	Flying to Florida
+                	<div class = "date" style="float:right;">March 25, 2014</div>    
+					</h4>
+    			</div>
+      			<div class="panel-body">
+					I'm from Florida, and will be going back this spring break. If someone wants to join me, post your contact details and we can talk.<br><br>
+       				<span class="label label-default">Sunshine</span>
+                	<span class="label label-primary">Florida</span>
+                	<span class="label label-warning">Travel</span>
+    			</div>
+			</div>
+		</a>
+		
+		<br>
+		
+		<a href="ChattingRoomb.html" style="text-decoration:none;">
+    		<div class="panel panel-default">
+        		<div class="panel-heading">
+            		<h4 class="panel-title">
+            		<img src = "group purple.png" width = "60" height="17">
+               		California for Spring Break!
+               		<div class = "date" style="float:right;">April 5, 2014</div>  
+      				</h4>
+    			</div>
+      			<div class="panel-body">
+        		We're a group of students planning to fly to California over break. If you're interested in joining, let us know!<br><br>
+       			<span class="label label-default">Warm</span>
                 <span class="label label-primary">Beach</span>
                 <span class="label label-warning">Travel</span>
-    </div>
-</a>
-<a href="ChattingRoomc.html">
-</div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
-                #3 : Carpooling 
-                <div class = "date" style="float:right;">2014.4.2
-                </div>  
-      </h4>
-    </div>
-      <div class="panel-body">
-       Description: I'd like share a ride to nearby cities. Does anyone interest in this?<br><br>
-       <span class="label label-default">Carpooling</span>
+    			</div>
+    		</div>
+		</a>
+		
+		<br>
+		
+		<a href="ChattingRoomc.html" style="text-decoration:none;">
+    		<div class="panel panel-default">
+        		<div class="panel-heading">
+            		<h4 class="panel-title">
+            		<img src = "group purple.png" width = "60" height="17">
+                	Carpool to Aurora
+                	<div class = "date" style="float:right;">April 2, 2014</div>  
+      				</h4>
+    			</div>
+      			<div class="panel-body">
+       			I'd like share a ride to Aurora. Can I catch a ride with anybody out there?<br><br>
+       			<span class="label label-default">Carpooling</span>
                 <span class="label label-primary">Happiness</span>
                 <span class="label label-warning">Save time and money</span>
-    </div>
-</div>
-</a>
-     <a href="ChattingRoomd.html">
-     <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-            <img src = "group purple.png" width = "60" height="17">
-               #4 : Shopping in Chicago  
-            <div class = "date" style="float:right;">2014.4.2
-                </div>  
-      </h4>
-    </div>
-      <div class="panel-body">
-         Description: This group is created for shopping in chicago.My car can hold three persons, so pls contact with me ASAP.<br><br>
-       <span class="label label-default">Shopping</span>
+    			</div>
+			</div>
+		</a>
+		
+		<br>
+		
+     	<a href="ChattingRoomd.html" style="text-decoration:none;">
+     		<div class="panel panel-default">
+        		<div class="panel-heading">
+            		<h4 class="panel-title">
+            		<img src = "group purple.png" width = "60" height="17">
+               		Shopping in Chicago  
+            		<div class = "date" style="float:right;">April 2, 2014</div>  
+      				</h4>
+    			</div>
+      			<div class="panel-body">
+         		I want to get together a group to go shopping in Chicago. My car can hold three people, contact me ASAP.<br><br>
+       			<span class="label label-default">Shopping</span>
                 <span class="label label-primary">Chicago</span>
                 <span class="label label-warning">SharingGas</span>
-    </div></a>
-    
-    
-    
+                </div>
+    		</div>
+    	</a>
+    	
+    	<br>
+    	
+     	<a href="ChattingRoomf.html" style="text-decoration:none;">
+     		<div class="panel panel-default">
+        		<div class="panel-heading">
+            		<h4 class="panel-title">
+            		<img src = "group purple.png" width = "60" height="17">
+               		Want a travel partner to Boston  
+            		<div class = "date" style="float:right;">March 28, 2014</div>  
+      				</h4>
+    			</div>
+      			<div class="panel-body">
+         		I really want to go to Boston this spring break, but I'm a bit apprehensive to go alone... Is anybody else going there too?<br><br>
+                <span class="label label-primary">Boston</span>
+                <span class="label label-warning">Travel</span>
+                </div>
+    		</div>
+    	</a>
     
     <div class="modal fade" id="CreateGroupModal">
         <div class="modal-dialog">
@@ -639,14 +700,21 @@ function joinD()
 	$(window).load(function() {
 		
 		if(sessionStorage.length == 0)
-			sessionStorage.setItem("login", 0);
-		
-		if(sessionStorage.getItem("login") == 0)
 		{
+			sessionStorage.setItem("login", 0);
+			
 			//Open Login modal
 			toLogin();
 		}
+		else
+		{
+			
+		}
 	});
+	
+	//$(window).bind('beforeunload', (function() {
+	//	sessionStorage.clear();
+	//});
 	
 	$(function() {
   		$('#somewhere-else').collapse({

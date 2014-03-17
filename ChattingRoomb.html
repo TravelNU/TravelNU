@@ -124,6 +124,16 @@ margin-right:2px;
 		text-align: center;
 	}
 
+	
+	
+.panel-default{
+    border:3px ;
+    border-style: solid;
+    border-color: #c48cd1;
+}
+.panel-default:hover{
+	background-color:#e1f0df;
+}
 
   </style></head>
 
@@ -141,12 +151,12 @@ margin-right:2px;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="HomePage.html"><img src="logo.jpg" width=200 height=45 /></a>
+				<a class="navbar-brand" href="Main Page.html"><img src="logo.jpg" width=200 height=45 /></a>
 			</div>
 			
 			<form class="navbar-form navbar-left" role="form">
 				<div class="form-group">
-					<button type="button" class="btn btn-primary navbar-btn" onClick="toWhere();">Change Place/Time</button>
+					<button type="button" class="btn btn-primary navbar-btn" onClick="toWhere();" disabled>Change Place/Time</button>
 				</div>
 			</form>
 			
@@ -156,7 +166,7 @@ margin-right:2px;
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Preferences</a></li>
-							<li><a href="MainPage.html">Log Out</a></li>
+							<li><a href="Main Page.html">Log Out</a></li>
 					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -197,37 +207,136 @@ margin-right:2px;
     <div class="row-offset-1" style="margin-top:25px;">
         <div class="col-lg-3" style="background-color:#F7F7F9;">
             <button type="submit" class="btn btn-primary btn-lg btn-block"  data-dismiss="modal" onclick="myFunction()">CREATE GROUP</button>
-           
-            <div class="form-group">
-                
-                <div class=" col-lg-12">
-                    <input type="email" class="form-control margin" id="searchkey" placeholder="Enter Keyword"><p></p>
-                </div>
-
-                <div class="col-lg-offset-1">
-                <span class="label label-warning">CAR POOL</span>
-                &nbsp&nbsp&nbsp   
-                <span class="label label-primary">SHARE CAR</span>
-                &nbsp&nbsp&nbsp  
-                <span class="label label-success">PARTNER</span>
-                <p></p>
-                </div>
-
-                    <div>
-                    <div class="col-lg-9">
-                        <select class="form-control" id="search by">
-                                <option value="time">search by</option>
-                                <option value="time">time</option>
-                                <option value="name">name</option>
-                                <option value="group size">group size</option>
-                                <option value="popularity">popularity</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-primary">Search</button>
-                    </div>   
-            </div>
-
-            <br>
+           <br>
+            
+            <div class="form-group" style="border-style:solid; border-width:1px">
+	            <div class="form-group">
+	                <div class=" col-lg-12">
+	                    <input type="email" class="form-control margin" id="searchkey" placeholder="Search"><p></p>
+	                </div>
+	
+	                <div class="col-lg-offset-1">
+	                <span class="label label-warning">CAR POOL</span>
+	                &nbsp&nbsp&nbsp   
+	                <span class="label label-primary">SHARE CAR</span>
+	                &nbsp&nbsp&nbsp  
+	                <span class="label label-default">PARTNER</span>
+	                <p></p>
+	                </div>
+	
+	                    <div>
+	                    <div class="col-lg-9">
+	                        <select class="form-control" id="search by">
+	                                <option value="time">Order by...</option>
+	                                <option value="time">Time</option>
+	                                <option value="name">Name</option>
+	                                <option value="group size">Group Size</option>
+	                                <option value="popularity">Popularity</option>
+	                        </select>
+	                    </div>
+	                    <button class="btn btn-success" style="width: 95px;">Search</button>
+	                    </div>   
+	            </div>
+	        </div>
+	        
+	        <h3 align="center">Available Groups</h3>
+            
+            
+            <!-- NEW GROUPS: -->
+            <div style="height:550px; overflow-y: scroll;">
+            <!--<div class="panel-group" style="margin-left:0%; height:550px; overflow-y: scroll;">-->
+		        <a href="ChattingRooma.html" style="text-decoration:none;">
+		        	<div class="panel panel-default">
+		        		<div class="panel-heading">
+		            		<h4 class="panel-title">
+		            		<img src = "group purple.png" width = "60" height="17">
+		                	Flying to Florida
+		                	<div class = "date" style="float:right;">March 25, 2014</div>    
+							</h4>
+		    			</div>
+		      			<div class="panel-body">
+							I'm from Florida, and will be going back this spring break. If someone wants to join me, post your contact details and we can talk.<br><br>
+		       				<span class="label label-default">Sunshine</span>
+		                	<span class="label label-primary">Florida</span>
+		                	<span class="label label-warning">Travel</span>
+		    			</div>
+					</div>
+				</a>
+				
+				<a href="ChattingRoomb.html" style="text-decoration:none;">
+		    		<div class="panel panel-default">
+		        		<div class="panel-heading">
+		            		<h4 class="panel-title">
+		            		<img src = "group purple.png" width = "60" height="17">
+		               		California for Spring Break!
+		               		<div class = "date" style="float:right;">April 5, 2014</div>  
+		      				</h4>
+		    			</div>
+		      			<div class="panel-body">
+		        		We're a group of students planning to fly to California over break. If you're interested in joining, let us know!<br><br>
+		       			<span class="label label-default">Warm</span>
+		                <span class="label label-primary">Beach</span>
+		                <span class="label label-warning">Travel</span>
+		    			</div>
+		    		</div>
+				</a>
+				
+				<a href="ChattingRoomc.html" style="text-decoration:none;">
+		    		<div class="panel panel-default">
+		        		<div class="panel-heading">
+		            		<h4 class="panel-title">
+		            		<img src = "group purple.png" width = "60" height="17">
+		                	Carpool to Aurora
+		                	<div class = "date" style="float:right;">April 2, 2014</div>  
+		      				</h4>
+		    			</div>
+		      			<div class="panel-body">
+		       			I'd like share a ride to Aurora. Can I catch a ride with anybody out there?<br><br>
+		       			<span class="label label-default">Carpooling</span>
+		                <span class="label label-primary">Happiness</span>
+		                <span class="label label-warning">Save time and money</span>
+		    			</div>
+					</div>
+				</a>
+				
+		     	<a href="ChattingRoomd.html" style="text-decoration:none;">
+		     		<div class="panel panel-default">
+		        		<div class="panel-heading">
+		            		<h4 class="panel-title">
+		            		<img src = "group purple.png" width = "60" height="17">
+		               		Shopping in Chicago  
+		            		<div class = "date" style="float:right;">April 2, 2014</div>  
+		      				</h4>
+		    			</div>
+		      			<div class="panel-body">
+		         		I want to get together a group to go shopping in Chicago. My car can hold three people, contact me ASAP.<br><br>
+		       			<span class="label label-default">Shopping</span>
+		                <span class="label label-primary">Chicago</span>
+		                <span class="label label-warning">SharingGas</span>
+		                </div>
+		    		</div>
+		    	</a>
+		    	
+		     	<a href="ChattingRoomf.html" style="text-decoration:none;">
+		     		<div class="panel panel-default">
+		        		<div class="panel-heading">
+		            		<h4 class="panel-title">
+		            		<img src = "group purple.png" width = "60" height="17">
+		               		Want a travel partner to Boston  
+		            		<div class = "date" style="float:right;">March 28, 2014</div>  
+		      				</h4>
+		    			</div>
+		      			<div class="panel-body">
+		         		I really want to go to Boston this spring break, but I'm a bit apprehensive to go alone... Is anybody else going there too?<br><br>
+		                <span class="label label-primary">Boston</span>
+		                <span class="label label-warning">Travel</span>
+		                </div>
+		    		</div>
+		    	</a>
+			</div>
+			</div>
+            
+            <!-- OLD GROUPS
             <div style="height:550px; overflow-y: scroll;">
                 <a href="ChattingRoom.html">
                 <div class="list group">
@@ -239,6 +348,7 @@ margin-right:2px;
                         <dd><p class="margin">2014.5.18</p></dd>
                     </li>
                 </div></a>
+                
                 <a href="ChattingRoom.html">
                 <div class="list group">
                     <li class="list-group-item">
@@ -289,72 +399,44 @@ margin-right:2px;
                         <dd><p class="margin">2014.5.18</p></dd>
                     </li>
                 </div></a>
+                -->
             </div>
-            <div style="height:50px;">
+            <div style="height:20px;">
             </div>
         </div>
 
         <h4>&nbsp &nbsp 
-            <a href="HomePage.html">
-            TravelNU</a>
-             > 
-            <a href="Main Page.html">Chicago 5.24.2014</a> 
-                > WANT A PARTNER TO SEATTLE</h4>
+            <a href="Main Page.html">Group Selection</a> 
+                > California for Spring Break!</h4>
         <br>
+        <p style="text-indent: 185px;">We're a group of students planning to fly to California over break. If you're interested in joining, let us know!</p>
+
         <div class="col-lg-9">
         <br>
             <ul class="list-group" style="height:500px; overflow-y:scroll;">
                 <li class="list-group-item">
                     <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
+                    Post here or email aaa000@u.northwestern.edu
                 </li>
-                <li class="list-group-item text-center"  style="background-color:#EFEFEF; text-align: right;">
-                    hello lazy green fur turtle
-                    <img src="2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle col-md-offset-9">          
-                </li>
-                <li class="list-group-item">
-                    <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
-                </li>
-                <li class="list-group-item text-right" style="background-color:#EFEFEF;">
-                    Hello lazy green fur turtle
-                    <img src=" 2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle col-md-offset-9">
+                <li class="list-group-item" style="background-color:#EFEFEF;">
+                    <img src="2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle"> 
+                    I just emailed you         
                 </li>
                 <li class="list-group-item">
                     <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
+                    Got it! Great, anyone else?
                 </li>
-                <li class="list-group-item text-right" style="background-color:#EFEFEF;">
-                    Hello lazy green fur turtle
-                    <img src=" 2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle col-md-offset-9">
+                <li class="list-group-item" style="background-color:#EFEFEF;">
+                    <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
+                    Just to let you all know, I bought my plane ticket for 3:30pm. We should all meet up when we get there.
                 </li>
                 <li class="list-group-item">
+                    <img src=" 3.png" width="30" height="30" alt="Responsive image" class="img-cycle">
+                    This sounds really fun, count me in!
+                </li>
+                <li class="list-group-item" style="background-color:#EFEFEF;">
                     <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
-                </li>
-                <li class="list-group-item text-right" style="background-color:#EFEFEF;">
-                    Hello lazy green fur turtle
-                    <img src=" 2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle col-md-offset-9">
-                </li>
-                <li class="list-group-item">
-                    <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
-                </li>
-                <li class="list-group-item text-right" style="background-color:#EFEFEF;">
-                    Hello lazy green fur turtle
-                    <img src=" 2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle col-md-offset-9">
-                </li>
-                <li class="list-group-item">
-                    <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
-                </li>
-                <li class="list-group-item text-right" style="background-color:#EFEFEF;">
-                    Hello lazy green fur turtle
-                    <img src=" 2.jpg" width="30" height="30" alt="Responsive image" class="img-cycle col-md-offset-9">
-                </li>
-                <li class="list-group-item">
-                    <img src=" 1.png" width="30" height="30" alt="Responsive image" class="img-cycle">
-                    This is a green fur turtle
+                    Great! Can you email me your email address?
                 </li>
             </ul>
             <ul class="list-group" style="height:200px;">
